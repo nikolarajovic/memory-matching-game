@@ -63,6 +63,15 @@ public class memory_matching_game {
 			}
 		}
 	}
+	
+	public static boolean isMatching(int first, int second, String[] board) {
+		return board[first].equals(board[second]);
+	}
+	
+	public static void match(int first, int second, boolean[] gameState) {
+		gameState[first] = true;
+		gameState[second] = true;
+	}
 
 	public static void main(String[] args) {
 		
