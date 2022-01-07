@@ -1,6 +1,7 @@
 package project_2022;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class memory_matching_game {
 
@@ -14,8 +15,20 @@ public class memory_matching_game {
 			board[i] = temp;
 		}
 	}
+	
+	public static void printToMemorise(String[] board) {
+		for (int i = 0; i < board.length; i++) {
+			if (i % 8 == 0) {
+				System.out.println();
+				System.out.print("|");
+			}
+			System.out.print(board[i] + "|");
+		}
+	}
 
 	public static void main(String[] args) {
+		
+		Scanner s = new Scanner(System.in);
 		
 		boolean[] gameState = new boolean[64];
 
@@ -29,6 +42,11 @@ public class memory_matching_game {
 
 		System.out.print("*** MEMORY MATCHING GAME ***\n");
 		shuffle(board);
+		printToMemorise(board);
+		System.out.println();
+		System.out.println("\nHave you memorised it?");
+		System.out.print("If you have, please type anything you want and press enter: ");
+		String text = s.nextLine();
 	}
 
 }
