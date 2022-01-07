@@ -33,6 +33,22 @@ public class memory_matching_game {
 		}
 		return true;
 	}
+	
+	public static void print(String[] board, boolean[] gameState) {
+		for (int i = 0; i < board.length; i++) {
+			if (i % 8 == 0) {
+				System.out.println();
+				System.out.print("|");
+			}
+			if (gameState[i]) {
+				System.out.print(board[i] + "|");
+			} else {
+				System.out.print("*|");
+			}
+		}
+
+		System.out.println();
+	}
 
 	public static void main(String[] args) {
 		
