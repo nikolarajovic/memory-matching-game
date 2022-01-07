@@ -49,6 +49,20 @@ public class memory_matching_game {
 
 		System.out.println();
 	}
+	
+	public static void printFlip(int first, int second, String[] board, boolean[] gameState) {
+		for (int i = 0; i < board.length; i++) {
+			if (i % 8 == 0) {
+				System.out.println();
+				System.out.print("|");
+			}
+			if (gameState[i] || i == first || i == second) {
+				System.out.print(board[i] + "|");
+			} else {
+				System.out.print("*|");
+			}
+		}
+	}
 
 	public static void main(String[] args) {
 		
