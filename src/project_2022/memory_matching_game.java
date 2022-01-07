@@ -25,6 +25,14 @@ public class memory_matching_game {
 			System.out.print(board[i] + "|");
 		}
 	}
+	
+	public static boolean isGameOver(boolean[] gameState) {
+		for (int i = 0; i < gameState.length; i++) {
+			if (!gameState[i])
+				return false;
+		}
+		return true;
+	}
 
 	public static void main(String[] args) {
 		
@@ -47,6 +55,8 @@ public class memory_matching_game {
 		System.out.println("\nHave you memorised it?");
 		System.out.print("If you have, please type anything you want and press enter: ");
 		String text = s.nextLine();
+		
+		
 	}
 
 }
