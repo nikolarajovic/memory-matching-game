@@ -100,7 +100,25 @@ public class memory_matching_game {
 		System.out.print("If you have, please type anything you want and press enter: ");
 		String text = s.nextLine();
 		
-		
+		while (!isGameOver(gameState)) {
+			print(board, gameState);
+			System.out.print("First card (0-63): ");
+			int first = s.nextInt();
+			System.out.print("Second card (0-63): ");
+			int second = s.nextInt();
+			if (isValidMove(first, second, gameState)) {
+				printFlip(first, second, board, gameState);
+				if (isMatching(first, second, board)) {
+					match(first, second, gameState);
+					System.out.println("\nBingo!");
+				} else {
+					System.out.println("\nMismatch!");
+				}
+			} else {
+				System.out.println("\nInvalid move!");
+			}
+		}
+		System.out.println("\nGame is finished!");
 	}
 
 }
