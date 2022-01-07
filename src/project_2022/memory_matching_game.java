@@ -72,6 +72,11 @@ public class memory_matching_game {
 		gameState[first] = true;
 		gameState[second] = true;
 	}
+	
+	public static boolean isValidMove(int first, int second, boolean[] gameState) {
+		return first >= 0 && first <= 63 && second >= 0 && second <= 63 
+				&& gameState[first] == false && gameState[first] == false;
+	}
 
 	public static void main(String[] args) {
 		
